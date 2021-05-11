@@ -1,0 +1,7 @@
+.successMessage{
+    color:lightgreen
+}
+
+.errorMessage{
+    color: tomato;
+}
