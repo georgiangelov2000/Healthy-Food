@@ -18,7 +18,7 @@ class PublicFood extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Row>
           {this.state.allFoods
             .sort()
@@ -35,7 +35,7 @@ class PublicFood extends Component {
               />
             ))}
         </Row>
-      </>
+      </div>
     );
   }
 }

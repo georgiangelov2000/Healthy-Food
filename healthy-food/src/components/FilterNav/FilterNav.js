@@ -5,7 +5,7 @@ import {NavLink as RRNavLink} from "react-router-dom";
 const FilterNav = () => {
   return (
     <div>
-      <Nav>
+      <Nav className="mb-3 justify-content-center">
         <NavItem>
           <NavLink  to="/categories/all" tag={RRNavLink} >All</NavLink>
         </NavItem>

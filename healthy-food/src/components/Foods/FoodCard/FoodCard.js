@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import {Row,Col,Container} from "reactstrap";
+import { Link as RRNavLink } from "react-router-dom";
+import { Col, NavLink } from "reactstrap";
+import style from "./FoodCard.module.css";
 
 class FoodCard extends Component {
   constructor(props) {
@@ -10,13 +11,15 @@ class FoodCard extends Component {
 
   render() {
     return (
-        <Col xs="2">
+      <Col xs="3" className="mb-5">
         <h5>Food: {this.props.nameFood}</h5>
-        <p>{this.props.category}</p>
-        <img width="100%" src={this.props.img} alt="" />
-        <p>Calories: {this.props.calories}</p>
-        <Link to={"/details/" + this.props.id}>Details</Link>
-        </Col>
+        <p>Category: {this.props.category}</p>
+        <img className={style.borderItem} width="100%" src={this.props.img} alt="" />
+          <p className="bg-secondary pt-2 pb-2 text-white mt-2">Calories: {this.props.calories}</p>
+        <NavLink tag={RRNavLink} to={"/details/" + this.props.id}>
+          Read More
+        </NavLink>
+      </Col>
     );
   }
 }

@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { Container } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Register from "./components/Auth/Register/Register";
@@ -31,7 +30,7 @@ function App() {
   };
 
   return (
-    <Container fluid>
+    <div>
       <UserContext.Provider value={authInfo}>
         <Header />
         <Switch>
@@ -49,7 +48,7 @@ function App() {
           }} />
         </Switch>
       </UserContext.Provider>
-    </Container>
+    </div>
   );
 }
 

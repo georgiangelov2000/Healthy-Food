@@ -34,7 +34,7 @@ class FoodByCategory extends Component {
   render() {
     if (this.state.currentCategory === "all") {
       return (
-        <Row>
+        <Row  className="m-0 text-center">
           <FilterNav />
           {this.state.food.sort().reverse()
             .map((x) => (
@@ -53,7 +53,7 @@ class FoodByCategory extends Component {
       );
     } else {
       return (
-        <Row>
+        <Row className="m-0 text-center">
           <FilterNav />
           {this.state.food.sort().reverse()
             .map((x) => x.category === this.state.currentCategory ? (
