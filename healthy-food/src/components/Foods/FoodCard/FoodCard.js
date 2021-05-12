@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link as RRNavLink } from "react-router-dom";
-import { Col, NavLink,Badge } from "reactstrap";
+import { Col, NavLink,Badge,Button,Row } from "reactstrap";
 import style from "./FoodCard.module.css";
 
 class FoodCard extends Component {
@@ -19,6 +19,14 @@ class FoodCard extends Component {
         <NavLink tag={RRNavLink} to={"/details/" + this.props.id}>
           Read More
         </NavLink>
+        <Row>
+          <Col xs="12 mb-2">
+        <Button className="bg-warning">Likes</Button>
+        </Col>
+        <Col xs="12">
+        <Button className="bg-primary">Add to Favourite</Button>
+        </Col>
+        </Row>
       </Col>
     );
   }

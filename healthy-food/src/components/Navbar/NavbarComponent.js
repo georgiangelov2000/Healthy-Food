@@ -89,6 +89,11 @@ class NavbarComponent extends Component {
                     Food By Category
                   </NavLink>
                 </NavItem>{" "}
+                <NavItem>
+                  <NavLink className="text-primary" to="/favourite/food" tag={RRNavLink}>
+                    Favourite Food
+                  </NavLink>
+                </NavItem>{" "}
               </Nav>
               <NavbarText>Healthy Food application</NavbarText>
             </Collapse>
