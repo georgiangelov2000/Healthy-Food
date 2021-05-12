@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 
 const AddFood = () => {
   const context = useContext(UserContext);
-  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [food, setFood] = useState({
     nameFood: "",

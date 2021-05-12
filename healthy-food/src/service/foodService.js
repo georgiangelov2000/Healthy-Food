@@ -59,3 +59,19 @@ export const deleteFood = async (id) => {
     }
   );
 };
+
+export const favouriteFood = async (id) => {
+  console.log(JSON.stringify(id));
+  return fetch(
+    `https://healthy-food-5ba55-default-rtdb.firebaseio.com/food/${id}.json`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(id),
+    }
+  ).catch((err) => {
+    console.log(err);
+  });
+};
