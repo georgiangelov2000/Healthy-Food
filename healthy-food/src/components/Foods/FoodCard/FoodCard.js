@@ -15,7 +15,7 @@ class FoodCard extends Component {
         <h5>Food: <Badge color="secondary bg-secondary">{this.props.nameFood}</Badge></h5>
         <h6>Category: <Badge color="secondary bg-secondary">{this.props.category}</Badge></h6>
         <img className={style.borderItem} width="100%" src={this.props.img} alt="" />
-          <h6>Calories: <Badge color="secondary bg-secondary">{this.props.calories}</Badge></h6>
+          <h6>Calories: <Badge color="secondary bg-secondary">{this.props.calories} kcal</Badge></h6>
         <NavLink tag={RRNavLink} to={"/details/" + this.props.id}>
           Read More
         </NavLink>

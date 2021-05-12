@@ -30,7 +30,7 @@ const FoodDetails = ({ match, history }) => {
         <h5> <small>Food: </small> <Badge color="secondary bg-secondary">{foodDetails.nameFood}</Badge></h5>
         <h5> <small>Category: </small> <Badge color="secondary bg-secondary">{foodDetails.category}</Badge></h5>
         <img width="100%" className="mb-2" src={foodDetails.img} alt="" />
-        <h5> <span>Calories: </span>  <Badge color="secondary bg-secondary">{foodDetails.calories}</Badge></h5>
+        <h5> <span>Calories: </span>  <Badge color="secondary bg-secondary">{foodDetails.calories} kcal</Badge></h5>
         <p> <span className={style.span}>Description: </span> {foodDetails.description}</p>
         <p> <span className={style.span}>Ingridients: </span> {foodDetails.ingridients}</p>
         {context.id === foodDetails.userId ? (

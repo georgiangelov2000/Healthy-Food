@@ -24,9 +24,8 @@ class NavbarComponent extends Component {
       <div className="mb-2">
         {this.context.isAuthenticated ? (
           <Navbar color="light" light expand="md">
-            <NavbarBrand>Navigation</NavbarBrand>
             <NavbarToggler  />
-            <Collapse navbar>
+            <Collapse navbar className="justify-content-around">
               <Nav className="mr-auto" navbar>
                 <NavItem>
                   <NavLink to="/dashboard" tag={RRNavLink}>
@@ -67,9 +66,8 @@ class NavbarComponent extends Component {
           </Navbar>
         ) : (
           <Navbar color="light" light expand="md">
-            <NavbarBrand>Navigation</NavbarBrand>
             <NavbarToggler />
-            <Collapse navbar>
+            <Collapse navbar  className="justify-content-around">
               <Nav className="mr-auto" navbar>
                 <NavItem>
                   <NavLink to="/register" tag={RRNavLink}>

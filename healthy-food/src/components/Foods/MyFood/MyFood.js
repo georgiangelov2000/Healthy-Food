@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import * as foodService from "../../../service/foodService";
 import FoodCard from "../FoodCard/FoodCard";
 import UserContext from "../../../context/UserContext";
-import { Row,  CardDeck } from "reactstrap";
+import { Row } from "reactstrap";
 
 const MyFood = () => {
   const [myFood, setMyFood] = useState([]);
