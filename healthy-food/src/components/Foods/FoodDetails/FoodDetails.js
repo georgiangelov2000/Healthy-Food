@@ -2,15 +2,13 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../../context/UserContext";
 import * as foodService from "../../../service/foodService";
+import style from "./FoodDetails.module.css";
+
 import {
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
+  Badge,
   Col,
   Row,
-  Button
+  Button,
 } from "reactstrap";
 
 const FoodDetails = ({ match, history }) => {
@@ -21,38 +19,32 @@ const FoodDetails = ({ match, history }) => {
     foodService.getDetails(match.params.id).then((res) => setFoodDetails(res));
   }, []);
 
-  const onDeleteButtonClick =async ()=>{
+  const onDeleteButtonClick = async () => {
     await foodService.deleteFood(match.params.id);
-    history.push("/dashboard")
-  }
+    history.push("/dashboard");
+  };
 
   return (
     <div>
-      <Col className="m-auto" xs="4">
-        <Card>
-          <CardBody>
-            <CardTitle tag="h5">{foodDetails.nameFood}</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
-              Category: {foodDetails.category}
-            </CardSubtitle>
-          </CardBody>
-          <img width="100%" src={foodDetails.img} alt="" />
-          <CardBody>
-              <CardText>{foodDetails.description}</CardText>
-            <CardText>Calories: {foodDetails.calories}</CardText>
-            <CardText>Ingredients: {foodDetails.ingridients}</CardText>
-            {context.id === foodDetails.userId ? 
-            <Row className="align-items-center">
+      <Col xs="3" className="mb-5 text-center m-auto">
+        <h5> <small>Food: </small> <Badge color="secondary bg-secondary">{foodDetails.nameFood}</Badge></h5>
+        <h5> <small>Category: </small> <Badge color="secondary bg-secondary">{foodDetails.category}</Badge></h5>
+        <img width="100%" className="mb-2" src={foodDetails.img} alt="" />
+        <h5> <span>Calories: </span>  <Badge color="secondary bg-secondary">{foodDetails.calories}</Badge></h5>
+        <p> <span className={style.span}>Description: </span> {foodDetails.description}</p>
+        <p> <span className={style.span}>Ingridients: </span> {foodDetails.ingridients}</p>
+        {context.id === foodDetails.userId ? (
+          <Row className="align-items-center">
             <Col xs="2">
-             <Link to={"/edit/"+match.params.id}> Edit </Link>
-             </Col>
-             <Col xs="2">
-             <Button  color="link" onClick={onDeleteButtonClick}>Delete</Button>
-             </Col>
-             </Row>
-             :null}
-          </CardBody>
-        </Card>
+              <Link to={"/edit/" + match.params.id}> Edit </Link>
+            </Col>
+            <Col xs="2">
+              <Button color="link" onClick={onDeleteButtonClick}>
+                Delete
+              </Button>
+            </Col>
+          </Row>
+        ) : null}
       </Col>
     </div>
   );
