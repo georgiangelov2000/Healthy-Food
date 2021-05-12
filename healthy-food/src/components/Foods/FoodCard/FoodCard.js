@@ -11,7 +11,7 @@ class FoodCard extends Component {
 
   render() {
     return (
-      <Col xs="3" className="mb-5">
+      <Col xs="3" className="mb-5 text-center">
         <h5>Food: {this.props.nameFood}</h5>
         <p>Category: {this.props.category}</p>
         <img className={style.borderItem} width="100%" src={this.props.img} alt="" />

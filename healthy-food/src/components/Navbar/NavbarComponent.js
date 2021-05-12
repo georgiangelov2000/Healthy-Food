@@ -77,6 +77,11 @@ class NavbarComponent extends Component {
                   </NavLink>
                 </NavItem>{" "}
                 <NavItem>
+                  <NavLink to="/" tag={RRNavLink}>
+                    Public Food
+                  </NavLink>{" "}
+                </NavItem>
+                <NavItem>
                   <NavLink to="/categories/all" tag={RRNavLink}>
                     Food By Category
                   </NavLink>

@@ -18,8 +18,7 @@ class PublicFood extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
+        <Row className="m-0 text-center">
           {this.state.allFoods
             .sort()
             .reverse()
@@ -35,7 +34,6 @@ class PublicFood extends Component {
               />
             ))}
         </Row>
-      </div>
     );
   }
 }
