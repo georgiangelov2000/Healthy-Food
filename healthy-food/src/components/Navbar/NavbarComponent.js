@@ -37,6 +37,11 @@ class NavbarComponent extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink to="/dashboard" tag={RRNavLink}>
+                    My Dashboard
+                  </NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink to="/logout" tag={RRNavLink}>
                     Logout
                   </NavLink>

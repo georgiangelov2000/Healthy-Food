@@ -3,9 +3,9 @@ import PublicFood from "../Foods/PublicFood/PublicFood";
 
 const Main = (props) => {
   return (
-    <>
+    <main>
       <PublicFood />
-    </>
+    </main>
   );
 };
 

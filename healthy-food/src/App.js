@@ -15,6 +15,7 @@ import PublicFood from "./components/Foods/PublicFood/PublicFood";
 import FoodByCategory from "./components/Foods/FoodByCategory/FoodByCategory";
 import Main from "./components/Main/Main";
 import { auth } from "./utils/firebase";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,6 +48,7 @@ function App() {
             return <Redirect to="/" />
           }} />
         </Switch>
+        <Footer />
       </UserContext.Provider>
     </div>
   );

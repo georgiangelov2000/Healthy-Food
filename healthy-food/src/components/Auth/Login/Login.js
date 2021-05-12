@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { auth } from "../../../utils/firebase";
 import { Button, Form, FormGroup, Label, Input,Container } from "reactstrap";
+import style from "./Login.module.css";
+
 
 const Login = ({ history }) => {
   const [error, setError] = useState("");
@@ -15,14 +17,14 @@ const Login = ({ history }) => {
 
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((userData) => {
-        history.push("/dashboard");
+      .then((userCredential) => {
+        history.push("/");
       })
-      .catch((error) => setError(error));
+      .catch((err) => setError(err.message));
   };
 
   return (
-    <Container>
+    <Container className="mb-5">
       <Form onSubmit={loginSubmitForm}>
         <h1>Login Form</h1>
         <FormGroup>
@@ -44,8 +46,8 @@ const Login = ({ history }) => {
           />
         </FormGroup>
         <Button>Submit</Button>
-        {error !== "" ? <div>{error}</div> : null}
       </Form>
+      <p className={style.errorMessage}>{error !==""?<div>{error}</div>:null}</p>
       </Container>
   );
 };
