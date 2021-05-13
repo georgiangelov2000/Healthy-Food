@@ -14,7 +14,8 @@ class PublicFood extends Component {
   }
 
   componentDidMount() {
-    foodService.getAll().then((res) => this.setState({ allFoods: res }));
+    foodService.getAll()
+    .then((res) => this.setState({ allFoods: res }));
   }
 
   render() {

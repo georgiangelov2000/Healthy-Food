@@ -9,21 +9,21 @@ const MyFood = () => {
   const context = useContext(UserContext);
 
   useEffect(() => {
-    foodService.getAll().then((res) => setMyFood(res));
+    foodService.getAll()
+    .then((res) => setMyFood(res));
   }, [myFood]);
 
   return (
-    <Row>
-      {myFood.length === 0 ? (
+    <Row className="m-0">
+      {myFood.length === 0 ? 
         <p>Please add food!</p>
-      ) : (
+       : 
         myFood
           ?.sort()
           .reverse()
           .map((x) =>
-            x.userId === context.id ? (
-              <FoodCard
-              
+            x.userId === context.id ? 
+              <FoodCard    
                 key={x.key}
                 nameFood={x.nameFood}
                 calories={x.calories}
@@ -31,13 +31,7 @@ const MyFood = () => {
                 img={x.img}
                 id={x.key}
                 category={x.category}
-            
-              />
-            ) : (
-              ""
-            )
-          )
-      )}
+            /> : "")}
     </Row>
   );
 };

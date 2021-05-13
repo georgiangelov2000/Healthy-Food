@@ -4,7 +4,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -16,7 +15,7 @@ class NavbarComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: false,
+      
     };
   }
   render() {

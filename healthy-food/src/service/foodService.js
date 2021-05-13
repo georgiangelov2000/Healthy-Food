@@ -1,3 +1,10 @@
+export const getAll = async () =>{
+  let foods = await fetch('https://healthy-food-5ba55-default-rtdb.firebaseio.com/food/.json').catch(err => {console.log(err)});
+  let data = await foods.json();
+  return Object.keys(data).map(key => ({key, ...data[key]}));
+}
+
+
 export const createFood = async (food) => {
   console.log(JSON.stringify(food));
   return fetch(
@@ -12,16 +19,6 @@ export const createFood = async (food) => {
   ).catch((err) => {
     console.log(err);
   });
-};
-
-export const getAll = async () => {
-  let getAllFood = await fetch(
-    "https://healthy-food-5ba55-default-rtdb.firebaseio.com/food/.json"
-  ).catch((err) => {
-    console.log(err);
-  });
-  let data = await getAllFood.json();
-  return Object.keys(data).map((key) => ({ key, ...data[key] }));
 };
 
 export const getDetails = async (id) => {

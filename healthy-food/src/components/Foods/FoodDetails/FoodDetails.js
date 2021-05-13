@@ -28,7 +28,7 @@ const FoodDetails = ({ match, history,id,likes }) => {
 
   return (
     <div>
-      <Col xs="3" className="mb-5 text-center m-auto">
+      <Col xs="3" className="mb-5 pb-5 text-center m-auto">
         <h5> <small>Food: </small> <Badge color="secondary bg-secondary">{foodDetails.nameFood}</Badge></h5>
         <h5> <small>Category: </small> <Badge color="secondary bg-secondary">{foodDetails.category}</Badge></h5>
         <img width="100%" className="mb-2" src={foodDetails.img} alt="" />
@@ -37,12 +37,12 @@ const FoodDetails = ({ match, history,id,likes }) => {
         <p> <span className={style.span}>Ingridients: </span> {foodDetails.ingridients}</p>
         <Button>Add to favourite</Button>
         {context.id === foodDetails.userId ? (
-          <Row className="align-items-center">
+          <Row className="align-items-center justify-content-between">
             <Col xs="2">
-              <Link to={"/edit/" + match.params.id}> Edit </Link>
+              <Link className={style.links} to={"/edit/" + match.params.id}> Edit </Link>
             </Col>
             <Col xs="2">
-              <Button color="link" onClick={onDeleteButtonClick}>
+              <Button className={style.links} color="link" onClick={onDeleteButtonClick}>
                 Delete
               </Button>
             </Col>
