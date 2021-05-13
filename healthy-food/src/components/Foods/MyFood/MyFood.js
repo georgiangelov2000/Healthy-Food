@@ -10,7 +10,6 @@ const MyFood = () => {
 
   useEffect(() => {
     foodService.getAll().then((res) => setMyFood(res));
-    console.log(myFood)
   }, [myFood]);
 
   return (

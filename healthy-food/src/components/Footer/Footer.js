@@ -4,7 +4,7 @@ import style from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={style.footer}>
       <Row className="m-0 text-center">
         <Col className="bg-secondary text-white pt-3 pb-3">
           <h1>About us</h1>

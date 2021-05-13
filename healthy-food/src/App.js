@@ -11,11 +11,11 @@ import UserContext from "././context/UserContext";
 import AddFood from "././components/Foods/AddFood/AddFood";
 import FoodDetails from "./components/Foods/FoodDetails/FoodDetails";
 import EditFood from "./components/Foods/EditFood/EditFood";
-import PublicFood from "./components/Foods/PublicFood/PublicFood";
 import FoodByCategory from "./components/Foods/FoodByCategory/FoodByCategory";
 import Main from "./components/Main/Main";
 import { auth } from "./utils/firebase";
 import Footer from "./components/Footer/Footer";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,7 +31,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <UserContext.Provider value={authInfo}>
         <Header />
         <Switch>
