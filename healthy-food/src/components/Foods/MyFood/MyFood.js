@@ -16,7 +16,7 @@ const MyFood = () => {
   return (
     <Row className="m-0">
       {myFood.length === 0 ? 
-        <p>Please add food!</p>
+        <p>Loading...</p>
        : 
         myFood
           ?.sort()

@@ -1,40 +1,35 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link as RRNavLink } from "react-router-dom";
 import { Col, NavLink, Badge, Button, Row } from "reactstrap";
 import style from "./FoodCard.module.css";
 import Filter from "../../Filter/Filter";
-import * as foodService from "../../../service/foodService";
+// import * as foodService from "../../../service/foodService";
 
-class FoodCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
+const FoodCard=({nameFood,category,id,img,calories,})=> {
+ 
     return (
       <Col xs="3" className="mb-5 text-center">
         <h5>
           Food:{" "}
-          <Badge color="secondary bg-secondary">{this.props.nameFood}</Badge>
+          <Badge color="secondary bg-secondary">{nameFood}</Badge>
         </h5>
         <h6>
           Category:{" "}
-          <Badge color="secondary bg-secondary">{this.props.category}</Badge>
+          <Badge color="secondary bg-secondary">{category}</Badge>
         </h6>
         <img
           className={style.borderItem}
           width="100%"
-          src={this.props.img}
+          src={img}
           alt=""
         />
         <h6>
           Calories:{" "}
           <Badge color="secondary bg-secondary">
-            {this.props.calories} kcal
+            {calories} kcal
           </Badge>
         </h6>
-        <NavLink tag={RRNavLink} to={"/details/" + this.props.id}>
+        <NavLink tag={RRNavLink} to={"/details/" + id}>
           Read More
         </NavLink>
         <Row>
@@ -44,7 +39,7 @@ class FoodCard extends Component {
         </Row>
       </Col>
     );
-  }
+
 }
 
 export default FoodCard;
