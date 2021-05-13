@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Link as RRNavLink } from "react-router-dom";
 import { Col, NavLink, Badge, Button, Row } from "reactstrap";
 import style from "./FoodCard.module.css";
+import Filter from "../../Filter/Filter";
 import * as foodService from "../../../service/foodService";
 
 class FoodCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {

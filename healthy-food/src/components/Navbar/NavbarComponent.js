@@ -29,7 +29,8 @@ class NavbarComponent extends Component {
               <Nav className="mr-auto" navbar>
                 <NavItem>
                   <NavLink to="/dashboard" tag={RRNavLink}>
-                    {this.context.username.substring(
+                    Welcome,  
+                     {this.context.username.substring(
                       0,
                       this.context.username.indexOf("@")
                     )}

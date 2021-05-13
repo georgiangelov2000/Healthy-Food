@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../context/UserContext";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
 import * as foodService from "../../../service/foodService";
-import { useForm } from "react-hook-form";
-
+import style from "./AddFood.module.css";
 
 const AddFood = () => {
   const context = useContext(UserContext);
@@ -16,19 +15,26 @@ const AddFood = () => {
     img: "",
     ingridients: "",
   });
+  const [error, setError] = useState([]);
 
   const onChange = (e) => setFood({ ...food, [e.target.name]: e.target.value });
 
   const onSubmitAddForm = (e) => {
     e.preventDefault();
-    Object.assign(food, { userId: context.id });
-    foodService.createFood(food);
-    console.log(food);
+
+    if(food.nameFood=="" || food.calories==""||food.description==""||food.category=="" ||food.img=="" ||food.ingridients=="" ){
+      setError({ err: "Field is required!" });
+    } else {
+      Object.assign(food, { userId: context.id });
+      foodService.createFood(food);
+      console.log(food);
+    }
   };
 
   return (
-    <div>
-      <Form onSubmit={onSubmitAddForm}>
+    <Container>
+      <Form onSubmit={onSubmitAddForm} className="mt-5 mb-5">
+        <h1 className="text-center">Add Food</h1>
         <FormGroup>
           <Label for="nameFood">Name</Label>
           <Input
@@ -38,6 +44,7 @@ const AddFood = () => {
             placeholder="Enter Name of the Food"
             onChange={onChange}
           />
+          {error ? <p className={style.errorMessage}>{error.err}</p> : null}
         </FormGroup>
         <FormGroup>
           <Label for="calories">Calories</Label>
@@ -47,7 +54,8 @@ const AddFood = () => {
             id="calories"
             placeholder="Calories"
             onChange={onChange}
-        />
+          />
+          {error ? <p className={style.errorMessage}>{error.err}</p> : null}
         </FormGroup>
         <FormGroup>
           <Label for="description">Description</Label>
@@ -58,18 +66,16 @@ const AddFood = () => {
             placeholder="Description"
             onChange={onChange}
           />
+          {error ? <p className={style.errorMessage}>{error.err}</p> : null}
         </FormGroup>
         <FormGroup>
-          <Input
-            type="select"
-            name="category"
-            onChange={onChange}
-          >
+          <Input type="select" name="category" onChange={onChange}>
             <option>Select Category</option>
             <option value="meat">Meat</option>
             <option value="vegan">Vegan</option>
             <option value="vegetarian">Vegetarian</option>
           </Input>
+          {error ? <p className={style.errorMessage}>{error.err}</p> : null}
         </FormGroup>
         <FormGroup>
           <Label for="img">Image</Label>
@@ -80,6 +86,7 @@ const AddFood = () => {
             placeholder="Upload Image"
             onChange={onChange}
           />
+          {error ? <p className={style.errorMessage}>{error.err}</p> : null}
         </FormGroup>
         <FormGroup>
           <Label for="exampleText">Text Area</Label>
@@ -89,10 +96,11 @@ const AddFood = () => {
             name="ingridients"
             id=" ingridients"
           />
+          {error ? <p className={style.errorMessage}>{error.err}</p> : null}
         </FormGroup>
         <Button>Submit</Button>
       </Form>
-    </div>
+    </Container>
   );
 };
 

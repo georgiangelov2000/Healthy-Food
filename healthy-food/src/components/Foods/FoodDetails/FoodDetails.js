@@ -25,13 +25,6 @@ const FoodDetails = ({ match, history,id,likes }) => {
     history.push("/dashboard");
   };
 
-  const addToFavorite=async()=>{
-  await foodService.favouriteFood(match.params.id)
-    .then((food)=>{
-    setFavoriteFood(food);
-    })
-    console.log(favouriteFood)
-  }
 
   return (
     <div>
@@ -42,7 +35,7 @@ const FoodDetails = ({ match, history,id,likes }) => {
         <h5> <span>Calories: </span>  <Badge color="secondary bg-secondary">{foodDetails.calories} kcal</Badge></h5>
         <p> <span className={style.span}>Description: </span> {foodDetails.description}</p>
         <p> <span className={style.span}>Ingridients: </span> {foodDetails.ingridients}</p>
-        <Button onClick={addToFavorite}>Add to favourite</Button>
+        <Button>Add to favourite</Button>
         {context.id === foodDetails.userId ? (
           <Row className="align-items-center">
             <Col xs="2">

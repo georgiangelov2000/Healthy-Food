@@ -10,6 +10,7 @@ const MyFood = () => {
 
   useEffect(() => {
     foodService.getAll().then((res) => setMyFood(res));
+    console.log(myFood)
   }, [myFood]);
 
   return (
@@ -23,6 +24,7 @@ const MyFood = () => {
           .map((x) =>
             x.userId === context.id ? (
               <FoodCard
+              
                 key={x.key}
                 nameFood={x.nameFood}
                 calories={x.calories}
@@ -30,6 +32,7 @@ const MyFood = () => {
                 img={x.img}
                 id={x.key}
                 category={x.category}
+            
               />
             ) : (
               ""
