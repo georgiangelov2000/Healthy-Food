@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
 import * as foodService from "../../../service/foodService";
 import style from "./AddFood.module.css";
 
-const AddFood = () => {
+const AddFood = ({history}) => {
   const context = useContext(UserContext);
 
   const [food, setFood] = useState({
@@ -27,8 +27,10 @@ const AddFood = () => {
     } else {
       Object.assign(food, { userId: context.id });
       foodService.createFood(food);
-      console.log(food);
+      history.push("/dashboard");
+      //console.log(food);
     }
+
   };
 
   return (
