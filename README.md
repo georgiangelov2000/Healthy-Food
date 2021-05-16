@@ -1,5 +1,6 @@
 # Healthy-Food
-## react-application with serverless
-crud-opearations
-authentification
-firebase-database
+## React-application serverless database (Fireabase)
+### Crud-opearations
+### Authentification
+### Authotization
+### Project for my Plovdiv university
