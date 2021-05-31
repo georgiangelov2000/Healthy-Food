@@ -35,7 +35,6 @@ const FoodDetails = ({ match, history,id,likes }) => {
         <h5> <span>Calories: </span>  <Badge color="secondary bg-secondary">{foodDetails.calories} kcal</Badge></h5>
         <p> <span className={style.span}>Description: </span> {foodDetails.description}</p>
         <p> <span className={style.span}>Ingridients: </span> {foodDetails.ingridients}</p>
-        <Button>Add to favourite</Button>
         {context.id === foodDetails.userId ? (
           <Row className="align-items-center justify-content-between">
             <Col xs="2">

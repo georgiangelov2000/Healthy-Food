@@ -1,8 +1,7 @@
 import React from "react";
 import { Link as RRNavLink } from "react-router-dom";
-import { Col, NavLink, Badge, Button, Row } from "reactstrap";
+import { Col, NavLink, Badge, Row } from "reactstrap";
 import style from "./FoodCard.module.css";
-import Filter from "../../Filter/Filter";
 // import * as foodService from "../../../service/foodService";
 
 const FoodCard=({nameFood,category,id,img,calories,})=> {
@@ -33,9 +32,6 @@ const FoodCard=({nameFood,category,id,img,calories,})=> {
           Read More
         </NavLink>
         <Row>
-          <Col xs="12">
-            <Button className="bg-primary">Add to Favourite</Button>
-          </Col>
         </Row>
       </Col>
     );
